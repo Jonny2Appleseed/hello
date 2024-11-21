@@ -1,8 +1,9 @@
 /**
- * Author: Carson Tice and Jonathan frank
+ * Author: Jonathan Frank & Carson Tice
  * Date: 2024-11-21
  *
- * This file holds the prototypes and the definitions of functions
+ * This file holds the prototypes and the definitions of functions in
+ * biniomial.c.
  */
 
 /**
