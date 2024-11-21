@@ -19,9 +19,10 @@ int main(int argc, char **argv){
   int n = atoi(argv[1]);
   int k = atoi(argv[2]);
 
-  long ways = choose(n, k);
+  // NOTE: Old code, didn't know if it should be deleted or comented out to show our work.
+  // long ways = choose(n, k);
 
-  printf("The amount of ways for choosing %d items out of %d items: %ld ways\n", k, n, ways);
+  // printf("The amount of ways for choosing %d items out of %d items: %ld ways\n", k, n, ways);
 
   long **table = (long **) malloc(sizeof(long*) * (n + 1));
   for(int i = 0; i <= n; i++) {
@@ -34,7 +35,7 @@ int main(int argc, char **argv){
     }
   }
 
-  ways = chooseMemoization(n, k, table);
+  long ways = chooseMemoization(n, k, table);
 
   printf("The amount of ways for choosing %d items out of %d items: %ld ways\n", k, n, ways);
 
