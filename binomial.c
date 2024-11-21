@@ -4,6 +4,11 @@
  *
  * This file holds the prototypes and the definitions of functions
  */
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+#include "binomial.h"
 
 long choose(int n, int k) {
     if(k == 0 || k == n) {

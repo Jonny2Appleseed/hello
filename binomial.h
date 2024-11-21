@@ -10,3 +10,10 @@
  * This function uses recursion using integers n and k to compute pascal's rule
  */
 long choose(int n, int k);
+
+
+/**
+ * This function uses memoization to compute pascal's rule
+ */
+
+long chooseMemoization(int n, int k, long arr);
