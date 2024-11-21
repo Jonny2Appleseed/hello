@@ -1,8 +1,8 @@
 /**
- * Author: Carson Tice and Jonathan frank
+ * Author: Jonathan Frank & Carson Tice
  * Date: 2024-11-21
  *
- * This file will run the functions from binomial.c
+ * This file runs all the functions that are computed in binomial.c.
  */
 
 #include <stdlib.h>
