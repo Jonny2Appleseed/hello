@@ -7,23 +7,36 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <math.h>
 
 #include "binomial.h"
 
 
 int main(int argc, char **argv){
 
-if (argc != 3) {
-    exit(1);
-  }
+  if(argc != 3) {
+      exit(1);
+    }
   int n = atoi(argv[1]);
   int k = atoi(argv[2]);
 
-long ways = choose(n, k);
+  long ways = choose(n, k);
 
-printf("The amount of ways for choosing %d items out of %d items: %ld ways\n", k, n, ways);
+  printf("The amount of ways for choosing %d items out of %d items: %ld ways\n", k, n, ways);
 
+  long **table = (long **) malloc(sizeof(long*) * (n + 1));
+  for(int i = 0; i <= n; i++) {
+    table[i] = (long *) malloc(sizeof(long) * (k + 1));
+  }
+  int j = 0;
+  for(int i = 0; i <= n; i++) {
+    for(j = 0; j <= k; j++) {
+      table[i][j] = -1;
+    }
+  }
 
-return 0;
+  ways = chooseMemoization(n, k, table);
+
+  printf("The amount of ways for choosing %d items out of %d items: %ld ways\n", k, n, ways);
+
+  return 0;
 }
