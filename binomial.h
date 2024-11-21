@@ -7,6 +7,6 @@
  */
 
 /**
- * This function
+ * This function uses recursion using integers n and k to compute pascal's rule
  */
 long choose(int n, int k);
