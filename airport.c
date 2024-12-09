@@ -57,20 +57,51 @@ void generateReports(Airport *airports, int n) {
 
   printf("\nClosest Airport to Lincoln: \n");
   printf("==============================\n");
+  qsort(airports, n, sizeof(Airport), cmpByLincolnDistance);
+  printAirports(&airports[0], 1);
 
   printf("\nFurthest Airport from Lincoln: \n");
   printf("==============================\n");
+  qsort(airports, n, sizeof(Airport), cmpByLincolnDistance);
+  printAirports(&airports[n - 1], 1);
 
   printf("\nEast-West Geographic Center: \n");
   printf("==============================\n");
+  qsort(airports, n, sizeof(Airport), cmpByLongitude);
+  int medianIndex = n / 2;
+  printAirports(&airports[medianIndex], 1);
 
   printf("\nNew York, NY airport: \n");
   printf("==============================\n");
-  //if none found, print: "No New York airport found!\n"
+  int found = 0;
+  for(int i = 0; i < n; i++) {
+    if(strcmp(airports[i].city, "New York") == 0 && strcmp(airports[i].countryAbbrv, "US") == 0) {
+      char *s = airportToString(&airports[i]);
+      printf("%s\n", s);
+      free(s);
+      found = 1;
+      break;
+    }
+  }
+  if(found == 0) {
+    printf("No New York airport found!\n");
+  }
 
   printf("\nLarge airport: \n");
   printf("==============================\n");
-  //if none found, print: "No large airport found!\n"
+  found = 0;
+  for(int i = 0; i < n; i++) {
+  if(strcmp(airports[i].type, "large_airport") == 0) {
+    char *s = airportToString(&airports[i]);
+    printf("%s\n", s);
+    free(s);
+    foundLargeAirport = 1;
+    break;
+    }
+  }
+  if(found == 0) {
+    printf("No large airport found!\n");
+  }
 
   return;
 }
