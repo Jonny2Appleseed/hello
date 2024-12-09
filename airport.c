@@ -17,27 +17,43 @@ void generateReports(Airport *airports, int n) {
 
   printf("\nAirports By GPS ID: \n");
   printf("==============================\n");
+  qsort(airports, n, sizeof(Airport), cmpByGPSId);
+  printAirports(airports, n);
 
   printf("\nAirports By Type: \n");
   printf("==============================\n");
+  qsort(airports, n, sizeof(Airport), cmpByType);
+  printAirports(airports, n);
 
   printf("\nAirports By Name: \n");
   printf("==============================\n");
+  qsort(airports, n, sizeof(Airport), cmpByName);
+  printAirports(airports, n);
 
   printf("\nAirports By Name - Reversed: \n");
   printf("==============================\n");
+  qsort(airports, n, sizeof(Airport), cmpByNameDesc);
+  printAirports(airports, n);
 
   printf("\nAirports By Country/City: \n");
   printf("==============================\n");
+  qsort(airports, n, sizeof(Airport), cmpByCountryCity);
+  printAirports(airports, n);
 
   printf("\nAirports By Latitude: \n");
   printf("==============================\n");
+  qsort(airports, n, sizeof(Airport), cmpByLatitude);
+  printAirports(airports, n);
 
   printf("\nAirports By Longitude: \n");
   printf("==============================\n");
+  qsort(airports, n, sizeof(Airport), cmpByLongitude);
+  printAirports(airports, n);
 
   printf("\nAirports By Distance from Lincoln: \n");
   printf("==============================\n");
+  qsort(airports, n, sizeof(Airport), cmpByLincolnDistance);
+  printAirports(airports, n);
 
   printf("\nClosest Airport to Lincoln: \n");
   printf("==============================\n");
@@ -198,9 +214,6 @@ int cmpByCountryCity(const void* a, const void* b){
   return result;
 }
 
-<<<<<<< HEAD
-
-=======
 int cmpByLatitude(const void* a, const void* b) {
     const Airport *x = (const Airport*) a;
     const Airport *y = (const Airport*) b;
@@ -222,4 +235,5 @@ int cmpByLongitude(const void* a, const void* b) {
     }
     return 0;
 }
->>>>>>> 0da54785c9d6e19710dcbe399c9f03ee2754d9cd
+
+
