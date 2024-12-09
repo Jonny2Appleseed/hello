@@ -118,6 +118,18 @@ int cmpByName(const void* a, const void* b);
 int cmpByNameDesc(const void* a, const void* b);
 
 /**
+ * A comparator function that orders the two Airport structures by
+ * country.
+ */
+int cmpByCountry(const void* a, const void* b);
+
+/**
+ * A comparator function that orders the two Airport structures by
+ * city.
+ */
+int cmpByCity(const void* a, const void* b);
+
+/**
  * A comparator function that orders the two Airport structures first by
  * country, then by city
  */
