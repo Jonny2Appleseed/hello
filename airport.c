@@ -190,11 +190,32 @@ int cmpByCity(const void*a, const void* b){
     return strcmp(x->city, x->city);
 }
 
-
 int cmpByCountryCity(const void* a, const void* b){
   int result = cmpByCountry(a,b);
   if(result == 0){
     int result = cmpByCity(a,b);
   }
   return result;
+}
+
+int cmpByLatitude(const void* a, const void* b) {
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
+    if(x->latitude > y->latitude) {
+      return -1;
+    } if(x->latitude < y->latitude) {
+      return 1;
+    }
+    return 0;
+}
+
+int cmpByLongitude(const void* a, const void* b) {
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
+    if(x->longitude < y->longitude) {
+      return -1;
+    } if(x->longitude > y->longitude) {
+      return 1;
+    }
+    return 0;
 }
