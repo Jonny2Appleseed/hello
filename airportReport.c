@@ -27,7 +27,8 @@ initAirport(&airports[7], "99KS", "tiny", "Elm Creek", 37.40930176, -98.6493988,
 initAirport(&airports[8], "26MA", "tiny_airport", "Pepperell Airport", 42.69620132, -71.55010223, 176, "Pepperell", "US");
 initAirport(&airports[9], "KIXA", "one_strip", "Halifax-Northampton", 36.32979965, -77.63523102, 145, "Roanoke Rapids", "US");
 
-void generateReports(Airport *airports, int n);
+generateReports(airports, 10);
 
+return 0;
 }
 

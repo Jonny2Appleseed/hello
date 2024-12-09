@@ -97,7 +97,7 @@ void generateReports(Airport *airports, int n) {
     char *s = airportToString(&airports[i]);
     printf("%s\n", s);
     free(s);
-    foundLargeAirport = 1;
+    found = 1;
     break;
     }
   }
@@ -230,13 +230,13 @@ int cmpByNameDesc(const void* a, const void* b){
 int cmpByCountry(const void* a, const void* b){
     const Airport *x = (const Airport*) a;
     const Airport *y = (const Airport*) b;
-    return strcmp(x->countryAbbrv, x->countryAbbrv);
+    return strcmp(x->countryAbbrv, y->countryAbbrv);
 }
 
 int cmpByCity(const void*a, const void* b){
     const Airport *x = (const Airport*) a;
     const Airport *y = (const Airport*) b;
-    return strcmp(x->city, x->city);
+    return strcmp(x->city, y->city);
 }
 
 int cmpByCountryCity(const void* a, const void* b){
