@@ -236,4 +236,23 @@ int cmpByLongitude(const void* a, const void* b) {
     return 0;
 }
 
+<<<<<<< HEAD
 
+=======
+int cmpByLincolnDistance(const void* a, const void* b) {
+    const double lincolnLatitude = 40.846176;
+    const double lincolnLongitude = -96.75471;
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
+    Airport lincolnAirport;
+    initAirport(&lincolnAirport, "0R2", "", "", lincolnLatitude, lincolnLongitude, 0, "", "");
+    double distanceX = getAirDistance(&lincolnAirport, x);
+    double distanceY = getAirDistance(&lincolnAirport, y);
+    if(distanceX < distanceY) {
+      return -1;
+    } if(distanceX > distanceY) {
+      return 1;
+    }
+    return 0;
+}
+>>>>>>> ae5fcaa553bef32e7e17f36df249b580a263c704
