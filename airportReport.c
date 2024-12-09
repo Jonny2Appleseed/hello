@@ -7,11 +7,14 @@
  */
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+#include <search.h>
 
 #include "airport.h"
 
+int main(int argc, char **argv) {
+
 Airport airports[10];
-int n = 10;
 
 initAirport(&airports[0], "OMA1", "normal", "Eppley Airfield", 41.3030, -95.8940, 150, "Omaha", "US");
 initAirport(&airports[1], "CHI0", "huge", "O'Hare", 41.9742, -87.9073, 125, "Chicago", "US");
@@ -24,6 +27,7 @@ initAirport(&airports[7], "99KS", "tiny", "Elm Creek", 37.40930176, -98.6493988,
 initAirport(&airports[8], "26MA", "tiny_airport", "Pepperell Airport", 42.69620132, -71.55010223, 176, "Pepperell", "US");
 initAirport(&airports[9], "KIXA", "one_strip", "Halifax-Northampton", 36.32979965, -77.63523102, 145, "Roanoke Rapids", "US");
 
-
 void generateReports(Airport *airports, int n);
+
+}
 
