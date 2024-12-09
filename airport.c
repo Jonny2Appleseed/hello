@@ -172,3 +172,11 @@ int cmpByName(const void* a, const void* b){
     return strcmp(x->name, y->name);
 }
 
+<<<<<<< HEAD
+=======
+int cmpByNameDesc(const void* a, const void* b){
+    const Airport *x= (const Airport*) a;
+    const Airport *y= (const Airport*) b;
+    return strcmp(y->name, x->name);
+}
+>>>>>>> b282acf7040979c6810e3fb37fce511a92a6d54a
