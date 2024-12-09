@@ -35,9 +35,15 @@ int main(int argc, char **argv){
     }
   }
 
+<<<<<<< HEAD
+
+
+return 0;
+=======
   long ways = chooseMemoization(n, k, table);
 
   printf("The amount of ways for choosing %d items out of %d items: %ld ways\n", k, n, ways);
 
   return 0;
+>>>>>>> 724ef80133fedfbd28f076b05e3f75a968967fb0
 }
