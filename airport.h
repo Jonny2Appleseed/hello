@@ -21,7 +21,8 @@ typedef struct {
 } Airport;
 
 /**
- * stuff
+ * A function that generates and prints several reports on the
+ * given array of Airport structures.
  */
 void generateReports(Airport *airports, int n);
 
@@ -153,9 +154,3 @@ int cmpByLongitude(const void* a, const void* b);
  * in ascending order according (closest to Lincoln would come first)
  */
 int cmpByLincolnDistance(const void* a, const void* b);
-
-/**
- * A function that generates and prints several reports on the
- * given array of Airport structures.
- */
-void generateReports(Airport *airports, int n);

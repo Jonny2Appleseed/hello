@@ -155,48 +155,71 @@ double getEstimatedTravelTime(const Airport* stops, int size, double aveKmsPerHo
 }
 
 int cmpByGPSId(const void* a, const void* b){
-    const Airport *x= (const Airport*) a;
-    const Airport *y= (const Airport*) b;
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
     return strcmp(x->gpsId, y->gpsId);
 }
 
 int cmpByType(const void* a, const void* b){
-    const Airport *x= (const Airport*) a;
-    const Airport *y= (const Airport*) b;
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
     return strcmp(x->type, y->type);
 }
 
 int cmpByName(const void* a, const void* b){
-    const Airport *x= (const Airport*) a;
-    const Airport *y= (const Airport*) b;
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
     return strcmp(x->name, y->name);
 }
 
 int cmpByNameDesc(const void* a, const void* b){
-    const Airport *x= (const Airport*) a;
-    const Airport *y= (const Airport*) b;
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
     return strcmp(y->name, x->name);
 }
 
 int cmpByCountry(const void* a, const void* b){
-    const Airport *x= (const Airport*) a;
-    const Airport *y= (const Airport*) b;
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
     return strcmp(x->countryAbbrv, x->countryAbbrv);
 }
 
 int cmpByCity(const void*a, const void* b){
-    const Airport *x= (const Airport*) a;
-    const Airport *y= (const Airport*) b;
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
     return strcmp(x->city, x->city);
 }
 
-
 int cmpByCountryCity(const void* a, const void* b){
-  int result = cmpByCountry(a,b);
-  if(result == 0){
-    int result = cmpByCity(a,b);
+  int result = cmpByCountry(a, b);
+  if(result == 0) {
+    int result = cmpByCity(a, b);
   }
   return result;
 }
 
+<<<<<<< HEAD
 
+=======
+int cmpByLatitude(const void* a, const void* b) {
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
+    if(x->latitude > y->latitude) {
+      return -1;
+    } if(x->latitude < y->latitude) {
+      return 1;
+    }
+    return 0;
+}
+
+int cmpByLongitude(const void* a, const void* b) {
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
+    if(x->longitude < y->longitude) {
+      return -1;
+    } if(x->longitude > y->longitude) {
+      return 1;
+    }
+    return 0;
+}
+>>>>>>> 0da54785c9d6e19710dcbe399c9f03ee2754d9cd
