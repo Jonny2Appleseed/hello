@@ -56,7 +56,6 @@ void generateReports(Airport *airports, int n) {
   printf("==============================\n");
   //if none found, print: "No large airport found!\n"
 
-
   return;
 }
 
