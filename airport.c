@@ -179,21 +179,21 @@ int cmpByNameDesc(const void* a, const void* b){
 }
 
 int cmpByCountry(const void* a, const void* b){
-    const Airport *x= (const Airport*) a;
-    const Airport *y= (const Airport*) b;
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
     return strcmp(x->countryAbbrv, x->countryAbbrv);
 }
 
 int cmpByCity(const void*a, const void* b){
-    const Airport *x= (const Airport*) a;
-    const Airport *y= (const Airport*) b;
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
     return strcmp(x->city, x->city);
 }
 
 int cmpByCountryCity(const void* a, const void* b){
-  int result = cmpByCountry(a,b);
-  if(result == 0){
-    int result = cmpByCity(a,b);
+  int result = cmpByCountry(a, b);
+  if(result == 0) {
+    int result = cmpByCity(a, b);
   }
   return result;
 }
