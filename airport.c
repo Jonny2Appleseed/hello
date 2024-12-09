@@ -159,3 +159,9 @@ int cmpByGPSId(const void* a, const void* b){
     const Airport *y= (const Airport*) b;
     return strcmp(x->gpsId, y->gpsId);
 }
+
+int cmpByType(const void* a, const void* b){
+    const Airport *x= (const Airport*) a;
+    const Airport *y= (const Airport*) b;
+    return strcmp(x->type, y->type);
+}
