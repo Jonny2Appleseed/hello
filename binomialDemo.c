@@ -25,5 +25,7 @@ long ways = choose(n, k);
 printf("The amount of ways for choosing %d items out of %d items: %ld ways\n", k, n, ways);
 
 
+
+
 return 0;
 }
