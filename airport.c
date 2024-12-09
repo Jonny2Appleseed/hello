@@ -153,3 +153,9 @@ double getEstimatedTravelTime(const Airport* stops, int size, double aveKmsPerHo
     }
     return travelTime;
 }
+
+int cmpByGPSId(const void* a, const void* b){
+    const Airport *x= (const Airport*) a;
+    const Airport *y= (const Airport*) b;
+    return strcmp(x->gpsId, y->gpsId);
+}
