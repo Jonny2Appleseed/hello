@@ -165,3 +165,9 @@ int cmpByType(const void* a, const void* b){
     const Airport *y= (const Airport*) b;
     return strcmp(x->type, y->type);
 }
+
+int cmpByName(const void* a, const void* b){
+    const Airport *x= (const Airport*) a;
+    const Airport *y= (const Airport*) b;
+    return strcmp(x->name, y->name);
+}
