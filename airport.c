@@ -236,9 +236,6 @@ int cmpByLongitude(const void* a, const void* b) {
     return 0;
 }
 
-<<<<<<< HEAD
-
-=======
 int cmpByLincolnDistance(const void* a, const void* b) {
     const double lincolnLatitude = 40.846176;
     const double lincolnLongitude = -96.75471;
@@ -255,4 +252,3 @@ int cmpByLincolnDistance(const void* a, const void* b) {
     }
     return 0;
 }
->>>>>>> ae5fcaa553bef32e7e17f36df249b580a263c704
