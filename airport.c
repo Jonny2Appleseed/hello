@@ -81,3 +81,75 @@ void printAirports(Airport *airports, int n) {
 
   return;
 }
+
+double degToRad(double degrees) {
+    double radians = (degrees / 180) * M_PI;
+    return radians;
+}
+
+double roundToHundredth(double n) {
+    double rounded = (round(n * 100)) / 100;
+    return rounded;
+}
+
+Airport* createAirport(const char* gpsId, const char* type, const char* name, double latitude, double longitude, int elevationFeet, const char* city, const char* countryAbbrv) {
+    Airport *airport = malloc(sizeof(Airport));
+    char* gpsIdCopy = strdup(gpsId);
+    char* typeCopy = strdup(type);
+    char* nameCopy = strdup(name);
+    char* cityCopy = strdup(city);
+    char* countryAbbrvCopy = strdup(countryAbbrv);
+    double latitudeCopy = latitude;
+    double longitudeCopy = longitude;
+    int elevationFeetCopy = elevationFeet;
+    airport->gpsId = gpsIdCopy;
+    airport->type = typeCopy;
+    airport->name = nameCopy;
+    airport->city = cityCopy;
+    airport->countryAbbrv = countryAbbrvCopy;
+    airport->latitude = latitudeCopy;
+    airport->longitude = longitudeCopy;
+    airport->elevationFeet = elevationFeetCopy;
+    return airport;
+}
+
+void initAirport(Airport* airport, const char* gpsId, const char* type, const char* name, double latitude, double longitude, int elevationFeet, const char* city, const char* countryAbbrv) {
+    if(airport == NULL) {
+        return;
+    }
+    airport->gpsId = strdup(gpsId);
+    airport->type = strdup(type);
+    airport->name = strdup(name);
+    airport->city = strdup(city);
+    airport->countryAbbrv = strdup(countryAbbrv);
+    airport->latitude = latitude;
+    airport->longitude = longitude;
+    airport->elevationFeet = elevationFeet;
+}
+
+double getAirDistance(const Airport* origin, const Airport* destination) {
+    if(origin->latitude > 90 || origin->latitude < -90 || origin->longitude > 180 || origin->longitude < -180){
+        return 1;
+    }
+    if(destination->latitude > 90 || destination->latitude < -90 || destination->longitude > 180 || destination->longitude < -180){
+        return 2;
+    }
+    int earthRadius = 6371;
+    double LatitudeA = degToRad(origin->latitude);
+    double LongitudeA = degToRad(origin->longitude);
+    double LatitudeB = degToRad(destination->latitude);
+    double LongitudeB = degToRad(destination->longitude);
+    double airDistance = acos((sin(LatitudeA) * sin(LatitudeB)) + (cos(LatitudeA) * cos(LatitudeB) * cos(LongitudeB - LongitudeA))) * earthRadius;
+    return airDistance;
+}
+
+double getEstimatedTravelTime(const Airport* stops, int size, double aveKmsPerHour, double aveLayoverTimeHrs) {
+    double travelTime = 0.0;
+    for (int i = 1; i < size; i++) {
+        travelTime += getAirDistance(&stops[i - 1], &stops[i]) / aveKmsPerHour;
+        if (i < size - 1) {
+            travelTime += aveLayoverTimeHrs;
+        }
+    }
+    return travelTime;
+}

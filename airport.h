@@ -21,6 +21,33 @@ typedef struct {
 } Airport;
 
 /**
+ * stuff
+ */
+void generateReports(Airport *airports, int n);
+
+/**
+ * Constructs a new string representation of the given
+ * Airport structure.
+ */
+char* airportToString(const Airport* a);
+
+/**
+ * Prints all the airports in the given array of n
+ * Airports.
+ */
+void printAirports(Airport *airports, int n);
+
+/**
+ * Converts given degrees into radians.
+ */
+double degToRad(double degrees);
+
+/**
+ * Rounds a given variable to the thousandths place.
+ */
+double roundToHundredth(double n);
+
+/**
  * A factory function to create a new Airport with the given
  * attributes.  This function should make *deep* copies of each
  * of the relevant fields and return a pointer to the newly
@@ -48,18 +75,6 @@ void initAirport(Airport* airport,
                  int elevationFeet,
                  const char* city,
                  const char* countryAbbrv);
-
-/**
- * Constructs a new string representation of the given
- * Airport structure.
- */
-char* airportToString(const Airport* a);
-
-/**
- * Prints all the airports in the given array of n
- * Airports.
- */
-void printAirports(Airport *airports, int n);
 
 /**
  * cmputes the air distance, in kilometers, between
