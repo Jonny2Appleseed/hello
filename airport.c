@@ -198,6 +198,9 @@ int cmpByCountryCity(const void* a, const void* b){
   return result;
 }
 
+<<<<<<< HEAD
+
+=======
 int cmpByLatitude(const void* a, const void* b) {
     const Airport *x = (const Airport*) a;
     const Airport *y = (const Airport*) b;
