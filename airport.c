@@ -242,7 +242,7 @@ int cmpByCity(const void*a, const void* b){
 int cmpByCountryCity(const void* a, const void* b){
   int result = cmpByCountry(a, b);
   if(result == 0) {
-    int result = cmpByCity(a, b);
+    result = cmpByCity(a, b);
   }
   return result;
 }
