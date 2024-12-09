@@ -155,25 +155,25 @@ double getEstimatedTravelTime(const Airport* stops, int size, double aveKmsPerHo
 }
 
 int cmpByGPSId(const void* a, const void* b){
-    const Airport *x= (const Airport*) a;
-    const Airport *y= (const Airport*) b;
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
     return strcmp(x->gpsId, y->gpsId);
 }
 
 int cmpByType(const void* a, const void* b){
-    const Airport *x= (const Airport*) a;
-    const Airport *y= (const Airport*) b;
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
     return strcmp(x->type, y->type);
 }
 
 int cmpByName(const void* a, const void* b){
-    const Airport *x= (const Airport*) a;
-    const Airport *y= (const Airport*) b;
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
     return strcmp(x->name, y->name);
 }
 
 int cmpByNameDesc(const void* a, const void* b){
-    const Airport *x= (const Airport*) a;
-    const Airport *y= (const Airport*) b;
+    const Airport *x = (const Airport*) a;
+    const Airport *y = (const Airport*) b;
     return strcmp(y->name, x->name);
 }
